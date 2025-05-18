@@ -14,3 +14,12 @@ django-admin startapp listings
 
 # Initialize git
 git init
+
+
+DEBUG=True
+SECRET_KEY=your-secret-key-here
+DB_NAME=alx_travel
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_HOST=localhost
+DB_PORT=3306

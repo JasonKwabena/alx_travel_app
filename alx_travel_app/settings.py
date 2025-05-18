@@ -93,3 +93,20 @@ from rest_framework.response import Response
 class HelloWorldView(APIView):
     def get(self, request):
         return Response({"message": "Hello, ALX Travel App!"})
+
+
+# core/celery.py
+import os
+from celery import Celery
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'core.settings')
+
+app = Celery('core')
+app.config_from_object('django.conf:settings', namespace='CELERY')
+app.autodiscover_tasks()
+
+
+# core/__init__.py
+from .celery import app as celery_app
+
+__all__ = ('celery_app',)

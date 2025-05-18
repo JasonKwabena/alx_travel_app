@@ -1,1 +1,16 @@
+# Create project directory
+mkdir alx_travel_app && cd alx_travel_app
 
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install required packages
+pip install django djangorestframework django-cors-headers celery drf-yasg mysqlclient django-environ
+
+# Create Django project and app
+django-admin startproject core .
+django-admin startapp listings
+
+# Initialize git
+git init

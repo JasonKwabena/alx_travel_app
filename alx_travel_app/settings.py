@@ -85,3 +85,11 @@ STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# listings/views.py
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+class HelloWorldView(APIView):
+    def get(self, request):
+        return Response({"message": "Hello, ALX Travel App!"})

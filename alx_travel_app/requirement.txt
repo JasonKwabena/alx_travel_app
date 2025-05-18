@@ -1,1 +1,37 @@
+Create .gitignore
 
+# .gitignore
+venv/
+.env
+*.pyc
+__pycache__/
+*.sqlite3
+*.log
+*.pot
+*.py[co]
+*.swp
+*.swo
+.DS_Store
+staticfiles/
+
+# Add files to git
+git add .
+git commit -m "Initial project setup with Django, DRF, Swagger, and Celery"
+
+python manage.py migrate
+python manage.py runserver
+
+
+Now you can access:
+
+    Django admin at http://localhost:8000/admin/
+
+    Swagger docs at http://localhost:8000/swagger/
+
+    API endpoint at http://localhost:8000/api/hello/
+
+To start Celery worker (in a new terminal):
+celery -A core worker --loglevel=info
+
+To start RabbitMQ (if not running as service):
+rabbitmq-server
